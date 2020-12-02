@@ -7,6 +7,9 @@ import Pokemon from "./components/Pokemon/Pokemon";
 function App() {
   return (
     <div className="App">
+      <nav>
+        <NavLink to={"/"}>Home</NavLink>
+      </nav>
       <Switch>
         <Route path={"/"} exact component={PokemonList} />
         <Route path={"/pokemon/:pokemon"} exact component={Pokemon} />
