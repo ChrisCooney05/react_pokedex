@@ -10,9 +10,23 @@ const Pokemon = (props) => {
   const pokemonData = useSelector((state) => state.Pokemon);
 
   useEffect(() => {
-    dispatch(getPokemon(pokemonName));
+    if (!pokemonData.data[pokemonName]) {
+      dispatch(getPokemon(pokemonName));
+    }
   }, []);
-  return <div>Pokemon</div>;
+
+  const showData = () => {
+    if (pokemonData.data[pokemonName]) {
+      return <p>Have Data</p>;
+    }
+    if (pokemonData.loading) {
+      return <p>...Loading</p>;
+    }
+    if (pokemonData.errorMsg) {
+      return <p>{pokemonData.errorMsg}</p>;
+    }
+  };
+  return <div>{showData()}</div>;
 };
 
 export default Pokemon;

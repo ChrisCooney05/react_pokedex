@@ -29,7 +29,7 @@ export const getPokemon = (pokemon) => async (dispatch) => {
     dispatch({
       type: TYPE.POKEMON_MULTIPLE_LOADING,
     });
-
+    console.log("Fetching...");
     const res = await axios.get(`https://pokeapi.co/api/v2/pokemon/${pokemon}`);
     //name stored so we can cash pokemon data
     dispatch({
