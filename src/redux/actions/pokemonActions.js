@@ -23,3 +23,25 @@ export const getPokemonList = (page) => async (dispatch) => {
     });
   }
 };
+
+export const getPokemon = (pokemon) => async (dispatch) => {
+  try {
+    dispatch({
+      type: TYPE.POKEMON_MULTIPLE_LOADING,
+    });
+
+    const res = await axios.get(
+      `https://pokeapi.co/api/v2/pokemon/${pokemon}"`
+    );
+    //name stored so we can cash pokemon data
+    dispatch({
+      type: TYPE.POKEMON_MULTIPLE_SUCCESS,
+      payload: res.data,
+      pokemonName: pokemon,
+    });
+  } catch (err) {
+    dispatch({
+      type: TYPE.POKEMON_MULTIPLE_FAIL,
+    });
+  }
+};
