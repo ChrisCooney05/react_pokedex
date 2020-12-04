@@ -22,7 +22,7 @@ const PokemonList = () => {
         <div className="list-wrapper">
           {pokemonList.pokemonData.map((pokemon) => {
             return (
-              <div className="pokemon-item">
+              <div className="pokemon-item" key={pokemon.name}>
                 <p>{pokemon.name}</p>
                 <Link to={`/pokemon/${pokemon.name}`}>View</Link>
               </div>
