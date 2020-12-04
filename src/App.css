@@ -23,3 +23,31 @@ nav a:hover,
 a:visited:hover {
   color: #2a75bb;
 }
+
+.list-wrapper {
+  width: 90%;
+  margin: auto;
+}
+
+.pokemon-item {
+  margin: 10px 0;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  border: 2px solid #3c5aa6;
+  border-radius: 5px;
+  padding: 10px;
+}
+
+.pokemon-item a {
+  text-decoration: none;
+  color: #2a75bb;
+}
+
+.pokemon-item a:hover {
+  color: #ff0000;
+}
+
+.pokemon-item a:visited:hover {
+  color: #ff0000;
+}
