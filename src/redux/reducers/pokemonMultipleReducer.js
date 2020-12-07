@@ -21,7 +21,7 @@ const pokemonMultipleReducer = (state = defaultState, action) => {
         errorMsg: "",
         data: {
           ...state.data,
-          //[] to set variable to pokemons name
+          //[] to set variable to pokemon's name
           [action.pokemonName]: action.payload,
         },
       };

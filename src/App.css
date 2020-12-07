@@ -51,3 +51,10 @@ a:visited:hover {
 .pokemon-item a:visited:hover {
   color: #ff0000;
 }
+
+.search-wrapper {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  margin: 10px;
+}
