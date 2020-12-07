@@ -58,3 +58,27 @@ a:visited:hover {
   justify-content: center;
   margin: 20px;
 }
+
+.pagination {
+  display: flex;
+  width: 500px;
+  margin: 10px auto;
+  justify-content: space-between;
+  list-style: none;
+}
+
+.pokemon {
+  width: 90%;
+  margin: auto;
+}
+
+.pokemon-wrapper {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+.item {
+  width: 30%;
+}
