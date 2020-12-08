@@ -8,16 +8,16 @@ const Pokemon = (props) => {
   const pokemonName = props.match.params.pokemon;
   const dispatch = useDispatch();
   const pokemonData = useSelector((state) => state.Pokemon);
+  const data = pokemonData.data[pokemonName];
 
   useEffect(() => {
-    if (!pokemonData.data[pokemonName]) {
+    if (!data) {
       dispatch(getPokemon(pokemonName));
     }
   }, []);
 
   const showData = () => {
-    if (pokemonData.data[pokemonName]) {
-      const data = pokemonData.data[pokemonName];
+    if (data) {
       return (
         <div className="pokemon-wrapper">
           <div className="item">
