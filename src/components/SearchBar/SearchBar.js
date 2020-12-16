@@ -27,3 +27,17 @@ const SearchBar = (props) => {
 };
 
 export default SearchBar;
+
+/*
+alternative to form:
+  <div className="search-wrapper">
+    <p>Search:</p>
+    <input
+      type="text"
+      value={search}
+      onChange={(e) => setSearch(e.target.value)}
+    />
+    <button onClick={() => props.history.push(`/pokemon/${search}`)}>Search</button>
+  </div>
+
+*/
