@@ -14,9 +14,10 @@ const SearchBar = (props) => {
     <form onSubmit={handleSubmit}>
       {/* onSubmit we go to the /pokemon route using our state as a param */}
       <div className="search-wrapper">
-        <label>Search:</label>
+        <label for="search">Search:</label>
         <input
           type="text"
+          name="search"
           value={search}
           onChange={(e) => setSearch(e.target.value)}
         />
