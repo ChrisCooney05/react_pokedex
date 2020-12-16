@@ -12,7 +12,13 @@ function App() {
       </nav>
       <Switch>
         <Route path={"/"} exact component={PokemonList} />
-        <Route path={"/pokemon/:pokemon"} exact component={Pokemon} />
+        <Route
+          path={"/pokemon/:pokemon"}
+          exact
+          // using render over component means I can pass through extra props if I want
+          render={(props) => <Pokemon text={"Test"} {...props} />}
+          //component={Pokemon}
+        />
         <Redirect to={"/"} />
       </Switch>
     </div>
