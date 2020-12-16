@@ -18,6 +18,11 @@ const PokemonList = (props) => {
     dispatch(getPokemonList(page));
   };
 
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    props.history.push(`/pokemon/${search}`);
+  };
+
   const showData = () => {
     if (pokemonList.loading) {
       return <p>...Loading</p>;
@@ -44,14 +49,18 @@ const PokemonList = (props) => {
   };
   return (
     <div>
-      <div className="search-wrapper">
-        <p>Search: </p>
-        <input type="text" onChange={(e) => setSearch(e.target.value)} />
-        {/* on click we go to the /pokemon route using our state as a param */}
-        <button onClick={() => props.history.push(`/pokemon/${search}`)}>
-          Search
-        </button>
-      </div>
+      <form onSubmit={handleSubmit}>
+        <div className="search-wrapper">
+          <label>Search:</label>
+          <input
+            type="text"
+            value={search}
+            onChange={(e) => setSearch(e.target.value)}
+          />
+          {/* on click we go to the /pokemon route using our state as a param */}
+          <input type="submit" value="Search" />
+        </div>
+      </form>
       {showData()}
       {pokemonList.pokemonData.length && (
         <ReactPaginate
