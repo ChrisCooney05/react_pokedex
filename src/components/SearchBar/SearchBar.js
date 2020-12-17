@@ -40,5 +40,4 @@ alternative to form:
     />
     <button onClick={() => props.history.push(`/pokemon/${search}`)}>Search</button>
   </div>
-
 */
