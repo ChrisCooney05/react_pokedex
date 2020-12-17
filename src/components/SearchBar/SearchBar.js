@@ -7,12 +7,12 @@ const SearchBar = (props) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    /* onSubmit we go to the /pokemon route using our state as a param */
     props.history.push(`/pokemon/${search}`);
   };
 
   return (
     <form onSubmit={handleSubmit}>
-      {/* onSubmit we go to the /pokemon route using our state as a param */}
       <div className="search-wrapper">
         <label for="search">Search:</label>
         <input
