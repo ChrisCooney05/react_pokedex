@@ -4,6 +4,16 @@ const ProgressBar = (props) => {
   const { statNum, statName } = props;
   const completed = (statNum * 100) / 255;
 
+  const checkBgColour = (num) => {
+    if (num < 20) {
+      return "#ff1919";
+    } else if (num >= 20 && num <= 35) {
+      return "#ffae19";
+    } else {
+      return "#76ee00";
+    }
+  };
+
   const containerStyles = {
     height: 20,
     width: "33%",
@@ -15,7 +25,7 @@ const ProgressBar = (props) => {
   const fillerStyles = {
     height: "100%",
     width: `${completed}%`,
-    backgroundColor: "#76ee00",
+    backgroundColor: checkBgColour(completed),
     borderRadius: "inherit",
     textAlign: "right",
   };
