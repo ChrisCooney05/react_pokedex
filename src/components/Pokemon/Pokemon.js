@@ -2,6 +2,7 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { getPokemon } from "../../redux/actions/pokemonActions";
+import ProgressBar from "../ProgressBar/ProgressBar";
 
 const Pokemon = (props) => {
   //name is passed via Link through props
@@ -33,7 +34,11 @@ const Pokemon = (props) => {
             {data.stats.map((el) => {
               return (
                 <p>
-                  {el.stat.name} {el.base_stat}
+                  <ProgressBar
+                    key={el.stat.name}
+                    statName={el.stat.name}
+                    statNum={el.base_stat}
+                  />
                 </p>
               );
             })}
