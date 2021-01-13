@@ -7,7 +7,6 @@ import Sprites from "../Sprites/Sprites";
 
 const Pokemon = (props) => {
   //name is passed via Link through props
-  console.log(props, "Props");
   const pokemonName = props.match.params.pokemon;
   const dispatch = useDispatch();
   const pokemonData = useSelector((state) => state.Pokemon);
