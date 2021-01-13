@@ -5,6 +5,7 @@ import { getPokemonList } from "../../redux/actions/pokemonActions";
 import { Link } from "react-router-dom";
 import ReactPaginate from "react-paginate";
 import SearchBar from "../SearchBar/SearchBar";
+import { nameToUpperCase } from "./PokemonListUtils";
 
 const PokemonList = (props) => {
   const dispatch = useDispatch();
@@ -27,11 +28,13 @@ const PokemonList = (props) => {
       return (
         <div className="list-wrapper">
           {pokemonList.pokemonData.map((pokemon) => {
+            const pokemonNameLowerCase = pokemon.name;
+            const pokemonNameUpperCase = nameToUpperCase(pokemonNameLowerCase);
             return (
-              <div className="pokemon-item" key={pokemon.name}>
-                <p>{pokemon.name}</p>
+              <div className="pokemon-item" key={pokemonNameLowerCase}>
+                <p>{pokemonNameUpperCase}</p>
                 {/* Link passes info as props to Pokemon component so I can use the pokemon name later */}
-                <Link to={`/pokemon/${pokemon.name}`}>View</Link>
+                <Link to={`/pokemon/${pokemonNameLowerCase}`}>View</Link>
               </div>
             );
           })}
