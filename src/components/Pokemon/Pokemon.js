@@ -2,6 +2,7 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { getPokemon } from "../../redux/actions/pokemonActions";
+import { nameToUpperCase } from "../PokemonList/PokemonListUtils";
 import ProgressBar from "../ProgressBar/ProgressBar";
 import Sprites from "../Sprites/Sprites";
 
@@ -49,7 +50,7 @@ const Pokemon = (props) => {
   };
   return (
     <div className="pokemon">
-      <h1>{pokemonName}</h1>
+      <h1>{nameToUpperCase(pokemonName)}</h1>
       {showData()}
     </div>
   );
