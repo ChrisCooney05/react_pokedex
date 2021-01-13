@@ -3,6 +3,7 @@ import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { getPokemon } from "../../redux/actions/pokemonActions";
 import ProgressBar from "../ProgressBar/ProgressBar";
+import Sprites from "../Sprites/Sprites";
 
 const Pokemon = (props) => {
   //name is passed via Link through props
@@ -22,13 +23,7 @@ const Pokemon = (props) => {
     if (data) {
       return (
         <div className="pokemon-wrapper">
-          <div className="item">
-            <h1>Sprites</h1>
-            <img src={data.sprites.front_default} alt="front" />
-            <img src={data.sprites.back_default} alt="back" />
-            <img src={data.sprites.front_shiny} alt="front-s" />
-            <img src={data.sprites.front_shiny} alt="back-s" />
-          </div>
+          <Sprites spriteSrc={data.sprites} />
           <div className="item">
             <h1>Stats</h1>
             {data.stats.map((el) => {
@@ -41,12 +36,6 @@ const Pokemon = (props) => {
                   />
                 </p>
               );
-            })}
-          </div>
-          <div className="item">
-            <h1>Abilities</h1>
-            {data.abilities.map((el) => {
-              return <p>{el.ability.name}</p>;
             })}
           </div>
         </div>
